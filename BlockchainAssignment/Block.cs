@@ -18,7 +18,7 @@ namespace BlockchainAssignment
 
         private int nonce = 0;
         private float difficultyThreshold = 4;
-        private float reward = 1;
+        private float reward = 100;
         private string merkleRoot;
 
         public Block(Block lastBlock, List<Transaction> transactions, string publicKey) {

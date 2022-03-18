@@ -65,6 +65,10 @@ namespace BlockchainAssignment
         {
             return amount;
         }
+        public float getAmountPlusFee()
+        {
+            return amount+fee;
+        }
         public string getHash()
         {
             return hash;

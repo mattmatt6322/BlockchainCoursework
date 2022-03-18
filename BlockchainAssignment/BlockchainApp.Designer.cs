@@ -55,6 +55,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.greedyButton = new System.Windows.Forms.Button();
+            this.altruisticButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.settingLabel = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -224,7 +230,7 @@
             this.printTransactionsButton.ForeColor = System.Drawing.Color.White;
             this.printTransactionsButton.Location = new System.Drawing.Point(270, 332);
             this.printTransactionsButton.Name = "printTransactionsButton";
-            this.printTransactionsButton.Size = new System.Drawing.Size(156, 22);
+            this.printTransactionsButton.Size = new System.Drawing.Size(175, 22);
             this.printTransactionsButton.TabIndex = 30;
             this.printTransactionsButton.Text = "Transaction Pool";
             this.printTransactionsButton.UseVisualStyleBackColor = false;
@@ -282,9 +288,9 @@
             this.mineBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.mineBlockButton.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mineBlockButton.ForeColor = System.Drawing.Color.White;
-            this.mineBlockButton.Location = new System.Drawing.Point(12, 360);
+            this.mineBlockButton.Location = new System.Drawing.Point(148, 359);
             this.mineBlockButton.Name = "mineBlockButton";
-            this.mineBlockButton.Size = new System.Drawing.Size(79, 68);
+            this.mineBlockButton.Size = new System.Drawing.Size(62, 55);
             this.mineBlockButton.TabIndex = 38;
             this.mineBlockButton.Text = "Mine Block";
             this.mineBlockButton.UseVisualStyleBackColor = false;
@@ -332,11 +338,11 @@
             this.fakeHashButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.fakeHashButton.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fakeHashButton.ForeColor = System.Drawing.Color.Tomato;
-            this.fakeHashButton.Location = new System.Drawing.Point(143, 391);
+            this.fakeHashButton.Location = new System.Drawing.Point(80, 361);
             this.fakeHashButton.Name = "fakeHashButton";
-            this.fakeHashButton.Size = new System.Drawing.Size(79, 68);
+            this.fakeHashButton.Size = new System.Drawing.Size(62, 54);
             this.fakeHashButton.TabIndex = 42;
-            this.fakeHashButton.Text = "Create fake hash";
+            this.fakeHashButton.Text = "fake hash";
             this.fakeHashButton.UseVisualStyleBackColor = false;
             this.fakeHashButton.Click += new System.EventHandler(this.fakeButton_Click);
             // 
@@ -347,11 +353,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Tomato;
-            this.button1.Location = new System.Drawing.Point(228, 391);
+            this.button1.Location = new System.Drawing.Point(12, 360);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 68);
+            this.button1.Size = new System.Drawing.Size(62, 54);
             this.button1.TabIndex = 43;
-            this.button1.Text = "Create fake link";
+            this.button1.Text = "Fake Link";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -362,11 +368,11 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Tomato;
-            this.button2.Location = new System.Drawing.Point(313, 391);
+            this.button2.Location = new System.Drawing.Point(80, 421);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 68);
+            this.button2.Size = new System.Drawing.Size(62, 54);
             this.button2.TabIndex = 44;
-            this.button2.Text = "Create fake trans";
+            this.button2.Text = "fake data";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -377,13 +383,95 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Lime;
-            this.button3.Location = new System.Drawing.Point(398, 391);
+            this.button3.Location = new System.Drawing.Point(12, 421);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 68);
+            this.button3.Size = new System.Drawing.Size(62, 54);
             this.button3.TabIndex = 45;
             this.button3.Text = "reset chain";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // greedyButton
+            // 
+            this.greedyButton.BackColor = System.Drawing.Color.Black;
+            this.greedyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.greedyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.greedyButton.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greedyButton.ForeColor = System.Drawing.Color.Yellow;
+            this.greedyButton.Location = new System.Drawing.Point(238, 401);
+            this.greedyButton.Name = "greedyButton";
+            this.greedyButton.Size = new System.Drawing.Size(72, 54);
+            this.greedyButton.TabIndex = 46;
+            this.greedyButton.Text = "greedy";
+            this.greedyButton.UseVisualStyleBackColor = false;
+            this.greedyButton.Click += new System.EventHandler(this.greedyButton_Click);
+            // 
+            // altruisticButton
+            // 
+            this.altruisticButton.BackColor = System.Drawing.Color.Black;
+            this.altruisticButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.altruisticButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.altruisticButton.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altruisticButton.ForeColor = System.Drawing.Color.Yellow;
+            this.altruisticButton.Location = new System.Drawing.Point(314, 401);
+            this.altruisticButton.Name = "altruisticButton";
+            this.altruisticButton.Size = new System.Drawing.Size(97, 54);
+            this.altruisticButton.TabIndex = 47;
+            this.altruisticButton.Text = "altruistic";
+            this.altruisticButton.UseVisualStyleBackColor = false;
+            this.altruisticButton.Click += new System.EventHandler(this.altruisticButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(240, 380);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "setting:";
+            // 
+            // settingLabel
+            // 
+            this.settingLabel.AutoSize = true;
+            this.settingLabel.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingLabel.ForeColor = System.Drawing.Color.Black;
+            this.settingLabel.Location = new System.Drawing.Point(311, 381);
+            this.settingLabel.Name = "settingLabel";
+            this.settingLabel.Size = new System.Drawing.Size(19, 15);
+            this.settingLabel.TabIndex = 49;
+            this.settingLabel.Text = "...";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Black;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button4.Location = new System.Drawing.Point(544, 398);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 55);
+            this.button4.TabIndex = 50;
+            this.button4.Text = "create transactions";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Black;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Yellow;
+            this.button5.Location = new System.Drawing.Point(417, 401);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 54);
+            this.button5.TabIndex = 51;
+            this.button5.Text = "Random";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // BlockchainApp
             // 
@@ -391,6 +479,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(681, 545);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.settingLabel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.altruisticButton);
+            this.Controls.Add(this.greedyButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -456,6 +550,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button greedyButton;
+        private System.Windows.Forms.Button altruisticButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label settingLabel;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

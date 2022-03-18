@@ -34,9 +34,24 @@ namespace BlockchainAssignment
             }
         }
 
-        public List<Transaction> selectTransactions() {
+        public List<Transaction> selectTransactions(string miningSetting) {
             int n = Math.Min(transactionPool.Count, transactionsPerBlock);
-            List<Transaction> chosenTransactions = transactionPool.GetRange(0, n);
+            List<Transaction> chosenTransactions = new List<Transaction>();
+            Random rnd = new Random();
+            int i = 0;
+            if (miningSetting == "Greedy")
+            {
+                transactionPool = transactionPool.OrderByDescending(t => t.getFee()).ToList();
+            }
+            if (miningSetting == "Altruistic")
+            {
+                transactionPool = transactionPool.OrderBy(t => t.getFee()).ToList();
+            }
+            if (miningSetting == "Random")
+            {
+                transactionPool = transactionPool.OrderBy(t => rnd.Next()).ToList();
+            }
+            chosenTransactions = transactionPool.GetRange(0, n);
             transactionPool = transactionPool.Except(chosenTransactions).ToList();
             return chosenTransactions;
         }
@@ -195,6 +210,10 @@ namespace BlockchainAssignment
         public List<Transaction> getTransactions()
         {
             return transactionPool;
+        }
+        public void setTransactions(List<Transaction> transactions)
+        {
+            transactionPool = transactions;
         }
     }
 }

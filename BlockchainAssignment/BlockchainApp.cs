@@ -17,7 +17,7 @@ namespace BlockchainAssignment
         String privKey;
         String publicKey;
         Wallet.Wallet myWallet;
-
+        string miningSetting;
 
         public BlockchainApp()
         {
@@ -33,6 +33,9 @@ namespace BlockchainAssignment
             textBox3.Text = privKey;
             textBox2.Text = publicKey;
             passwordText.Text = privKey;
+
+            miningSetting = "Altruistic";
+            settingLabel.Text = miningSetting;
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -93,7 +96,7 @@ namespace BlockchainAssignment
 
         private void mineBlockButton_Click(object sender, EventArgs e)
         {
-            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.selectTransactions(), publicKey);
+            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.selectTransactions(miningSetting), publicKey);
             blockchain.addBlock(newBlock);
             richTextBox1.Text = "Added block: \n" + blockchain.getLastBlock().getIndex().ToString();
         }
@@ -127,16 +130,16 @@ namespace BlockchainAssignment
 
         private void fakeButton_Click(object sender, EventArgs e)
         {
-            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.selectTransactions(), publicKey);
-            newBlock.setHash("Hello");
+            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.selectTransactions(miningSetting), publicKey);
+            newBlock.setHash("fake");
             blockchain.addBlock(newBlock);
             richTextBox1.Text = "Added block: \n" + blockchain.getLastBlock().getIndex().ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.selectTransactions(), publicKey);
-            newBlock.setPreviousHash("Hello");
+            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.selectTransactions(miningSetting), publicKey);
+            newBlock.setPreviousHash("fake");
             blockchain.addBlock(newBlock);
             richTextBox1.Text = "Added block: \n" + blockchain.getLastBlock().getIndex().ToString();
         }
@@ -145,7 +148,7 @@ namespace BlockchainAssignment
         {
             List<Transaction> fakeTransactions = new List<Transaction>();
 
-            fakeTransactions.Add(new Transaction(1, 1, "Hello", "Hey", "Hi"));
+            fakeTransactions.Add(new Transaction(1, 1, "fake", "fake", "fake"));
 
             Block newBlock = new Block(blockchain.getLastBlock(), fakeTransactions, publicKey);
             blockchain.addBlock(newBlock);
@@ -156,6 +159,35 @@ namespace BlockchainAssignment
         {
             blockchain = new Blockchain();
             richTextBox1.Text = "New Blockchain Initialised!";
+        }
+
+        private void greedyButton_Click(object sender, EventArgs e)
+        {
+            miningSetting = "Greedy";
+            settingLabel.Text = miningSetting;
+        }
+
+        private void altruisticButton_Click(object sender, EventArgs e)
+        {
+            miningSetting = "Altruistic";
+            settingLabel.Text = miningSetting;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<Transaction> fakeTransactions = new List<Transaction>();
+            Random rnd = new Random();
+
+            for (int i = 1; i < 30; i++) {
+                fakeTransactions.Add(new Transaction(1, rnd.Next(0, 30), "fake", "fake", "fake"));
+            }
+            blockchain.setTransactions(fakeTransactions);
+            richTextBox1.Text = "fake transactions made";
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            miningSetting = "Random";
+            settingLabel.Text = miningSetting;
         }
     }
 }
